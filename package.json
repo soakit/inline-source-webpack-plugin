@@ -1,0 +1,15 @@
+{
+  "name": "inline-source-webpack-plugin",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "liuchang2024@gmail.com",
+  "repository": "git://github.com/soakit/inline-source-webpack-plugin.git",
+  "license": "MIT",
+  "dependencies": {
+    "inline-source": "^7.0.0"
+  }
+}
