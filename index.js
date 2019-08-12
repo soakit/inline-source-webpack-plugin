@@ -1,4 +1,4 @@
-var inline = require('inline-source')
+const { inlineSource } = require('inline-source')
 
 function InlineSourceWebpackPlugin(options) {
 	// Setup the plugin instance with options...
@@ -19,13 +19,14 @@ InlineSourceWebpackPlugin.prototype.apply = function(compiler) {
 			'InlineSourceWebpackPlugin',
 			(htmlPluginData, callback) => {
 				var html = htmlPluginData.html
-				inline(html, this.options, function(err, html) {
-					if (err) {
-						return callback(err)
-					}
-					htmlPluginData.html = html
-					callback(null, htmlPluginData)
-				})
+				inlineSource(html, this.options)
+					.then(html => {
+						htmlPluginData.html = html
+						callback(null, htmlPluginData)
+					})
+					.catch(err => {
+						callback(err)
+					})
 			}
 		)
 	})
