@@ -10,6 +10,6 @@
   "repository": "git://github.com/soakit/inline-source-webpack-plugin.git",
   "license": "MIT",
   "dependencies": {
-    "inline-source": "^7.0.0"
+    "inline-source": "^8.0.2"
   }
 }
